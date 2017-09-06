@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color="laranja">
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
@@ -8,11 +8,11 @@
 </ion-header>
 
 <ion-content>
-  <ion-list>
-    <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">
-      <ion-icon [name]="item.icon" item-left></ion-icon>
+  <ion-list no-lines>
+    <button ion-item *ngFor="let item of items" (click)="itemTapped(item)">
+      <ion-icon color="verde" [name]="item.icon" item-left></ion-icon>
       {{item.title}}
-      <div class="item-note" item-right>
+      <div color="verde" class="item-note" item-right>
         {{item.note}}
       </div>
     </button>
