@@ -8,9 +8,13 @@ import { ListPage } from '../pages/list/list';
 import { DetailPage } from '../pages/detail/detail';
 import { LoginPage } from '../pages/login/login';
 
+import { UsuarioListPage } from '../pages/usuario/usuarioList/usuarioList';
+import { UsuarioPage } from '../pages/usuario/usuario/usuario';
+
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { LoaderService } from '../services/loader'
+import { BaseClass } from '../baseClass/baseClass';
 
 @NgModule({
   declarations: [
@@ -18,7 +22,9 @@ import { LoaderService } from '../services/loader'
     HomePage,
     ListPage,
     DetailPage,
-    LoginPage
+    LoginPage,
+    UsuarioListPage,
+    UsuarioPage
   ],
   imports: [
     BrowserModule,
@@ -30,13 +36,16 @@ import { LoaderService } from '../services/loader'
     HomePage,
     ListPage,
     DetailPage,
-    LoginPage
+    LoginPage,
+    UsuarioListPage,
+    UsuarioPage
   ],
   providers: [
     LoaderService,
+    BaseClass,
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    { provide: ErrorHandler, useClass: IonicErrorHandler }
   ]
 })
-export class AppModule {}
+export class AppModule { }
