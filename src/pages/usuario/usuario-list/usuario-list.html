@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+          </button>
+    <ion-title>Lista de Usuários</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list no-lines>
+    <ion-item-sliding *ngFor="let item of items" (ionSwipe)="excluirUsuario(item)">
+      <ion-item (click)="consultarUsuario(item)">
+        <ion-icon color="verde" [name]="item.icon" item-left></ion-icon>
+        {{item.title}}
+        <div color="primary" class="item-note" item-right>
+          {{item.note}}
+        </div>
+      </ion-item>
+      <ion-item-options side="right">
+          <button ion-button color="light" (click)="consultarUsuario(item)">
+              <ion-icon name="ios-eye-outline"></ion-icon>
+              Ver
+            </button>
+        <button ion-button expandable color="danger" (click)="excluirUsuario(item)">
+        <ion-icon name="trash"></ion-icon>
+        Excluir
+      </button>
+      </ion-item-options>
+      
+    </ion-item-sliding>
+  </ion-list>
+  <ion-fab right bottom>
+    <button ion-fab color="verde" (click)="incluirUsuario()"><ion-icon name="add"></ion-icon></button>
+  </ion-fab>
+</ion-content>

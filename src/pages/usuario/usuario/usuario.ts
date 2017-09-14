@@ -14,9 +14,6 @@ export class UsuarioPage{
 
     verificarAcao(){
         this.baseClass.verificarAcao(this.navParams.get('acao'));
-        
-        console.log('ALTERAR: ' + this.baseClass.isAlterar)
-        console.log('SEM ACAO: ' + this.baseClass.semAcao)
         if(this.baseClass.semAcao){
             //função de retornar para a tela de listagem
         }

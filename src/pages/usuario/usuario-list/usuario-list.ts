@@ -6,7 +6,7 @@ import { BaseClass} from '../../../baseClass/baseClass';
 
 @Component({
     selector: 'page-usuario-list',
-    templateUrl: 'usuarioList.html'
+    templateUrl: 'usuario-list.html'
 })
 
 export class UsuarioListPage {
@@ -34,13 +34,24 @@ export class UsuarioListPage {
 
 
 
-    itemTapped(item) {
-        this.loadingService.exibirLoading("Recuperando informações sobre " + item.title);
+    consultarUsuario(usuario) {
+        this.loadingService.exibirLoading("Recuperando informações sobre " + usuario.title);
         // That's right, we're pushing to ourselves!
         this.navCtrl.push(UsuarioPage, {
-            selectedItem: item,
+            selectedItem: usuario,
             acao: this.baseClass.ALTERAR
         });
         this.loadingService.ocultarLoading();
+    }
+
+    excluirUsuario(usuario)
+    {
+        console.log('Usuario ' + usuario.title + ' excluido com sucesso!!');
+    }
+
+    incluirUsuario(){
+        this.navCtrl.push(UsuarioPage, {
+            acao: this.baseClass.INCLUIR
+        });
     }
 }

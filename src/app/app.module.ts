@@ -8,7 +8,7 @@ import { ListPage } from '../pages/list/list';
 import { DetailPage } from '../pages/detail/detail';
 import { LoginPage } from '../pages/login/login';
 
-import { UsuarioListPage } from '../pages/usuario/usuarioList/usuarioList';
+import { UsuarioListPage } from '../pages/usuario/usuario-list/usuario-list';
 import { UsuarioPage } from '../pages/usuario/usuario/usuario';
 
 import { StatusBar } from '@ionic-native/status-bar';
