@@ -20,8 +20,12 @@
       </ion-item>
       <ion-item-options side="right">
           <button ion-button color="light" (click)="consultarUsuario(item)">
-              <ion-icon name="ios-eye-outline"></ion-icon>
+              <ion-icon name="ios-information-circle-outline"></ion-icon>
               Ver
+            </button>
+            <button ion-button color="laranja" (click)="alterarUsuario(item)">
+              <ion-icon name="ios-create-outline"></ion-icon>
+              Editar
             </button>
         <button ion-button expandable color="danger" (click)="excluirUsuario(item)">
         <ion-icon name="trash"></ion-icon>

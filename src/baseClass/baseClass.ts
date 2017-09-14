@@ -6,6 +6,7 @@ export class BaseClass{
     private _isAlterar : boolean;
     private _isExcluir : boolean;
     private _semAcao : boolean;
+    private _acao : string;
     
     //PROPRIEDADES
     public get isDetalhar() : boolean {
@@ -23,6 +24,9 @@ export class BaseClass{
     //PROPRIEDADES
     public get semAcao() : boolean {
         return this._semAcao;
+    }
+    public get acao() : string {
+        return this._acao;
     }
 
     //CONSTANTES
@@ -47,6 +51,7 @@ export class BaseClass{
             this._isExcluir = false;
             this._isIncluir = false;
             this._semAcao = false;
+            this._acao = acao;
         }
         else if(acao == this.DETALHAR){
             this._isDetalhar = true;
@@ -54,6 +59,7 @@ export class BaseClass{
             this._isExcluir = false;
             this._isIncluir = false;
             this._semAcao = false;
+            this._acao = acao;
         }
         else if (acao == this.EXCLUIR){
             this._isExcluir = true;
@@ -61,6 +67,7 @@ export class BaseClass{
             this._isAlterar = false;
             this._isIncluir = false;
             this._semAcao = false;
+            this._acao = acao;
         }
         else if (acao == this.INCLUIR){
             this._isIncluir = true;
@@ -68,6 +75,7 @@ export class BaseClass{
             this._isDetalhar = false;
             this._isAlterar = false;
             this._semAcao = false;
+            this._acao = acao;
         }
         else{
             this._semAcao = true;
@@ -75,6 +83,7 @@ export class BaseClass{
             this._isExcluir = false;
             this._isDetalhar = false;
             this._isAlterar = false;
+            this._acao = null;
         }
     }
     

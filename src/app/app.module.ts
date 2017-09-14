@@ -13,7 +13,8 @@ import { UsuarioPage } from '../pages/usuario/usuario/usuario';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import { LoaderService } from '../services/loader'
+import { LoaderService } from '../services/loader';
+import { AlertService } from '../services/alert';
 import { BaseClass } from '../baseClass/baseClass';
 
 @NgModule({
@@ -42,6 +43,7 @@ import { BaseClass } from '../baseClass/baseClass';
   ],
   providers: [
     LoaderService,
+    AlertService,
     BaseClass,
     StatusBar,
     SplashScreen,
