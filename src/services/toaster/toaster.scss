@@ -1,0 +1,14 @@
+.toast-success {
+    > div{
+        border-radius: 3px;
+         background-color:#32db64!important;
+         text-align: center !important;
+     }
+  }
+.toast-fail {
+    > div{
+        border-radius: 3px;
+         background-color:#f53d3d!important;
+         text-align: center !important;
+     }
+  }

@@ -7,15 +7,17 @@
 <ion-content center text-center>
     <h6>Efetue o Login para ter acesso ao Sistema !!</h6>
         <ion-card>
+            <form (ngSubmit)="entrar()"> 
             <ion-list>
                 <ion-item>
-                    <ion-input type="text" placeholder="E-mail"></ion-input>
+                    <ion-input type="email" placeholder="E-mail"></ion-input>
                 </ion-item>
                 <ion-item>
                     <ion-input type="password" placeholder="Senha"></ion-input>
                 </ion-item>
             </ion-list>
-            <button ion-button block (click)="entrar()">Entrar</button>
+            <button ion-button block type="submit">Entrar</button>
+        </form>
         </ion-card>
     
 </ion-content>

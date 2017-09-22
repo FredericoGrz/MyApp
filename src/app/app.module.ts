@@ -15,6 +15,8 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { LoaderService } from '../services/loader';
 import { AlertService } from '../services/alert';
+import { Navigation } from '../services/navigation';
+import { ToasterService } from '../services/toaster/toaster';
 import { BaseClass } from '../baseClass/baseClass';
 
 @NgModule({
@@ -44,6 +46,8 @@ import { BaseClass } from '../baseClass/baseClass';
   providers: [
     LoaderService,
     AlertService,
+    Navigation,
+    ToasterService,
     BaseClass,
     StatusBar,
     SplashScreen,

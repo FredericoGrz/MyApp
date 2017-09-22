@@ -5,5 +5,28 @@
 </ion-header>
 
 <ion-content center text-center>
-
+    <ion-card>
+        <form (ngSubmit)="salvar(baseClass.acao)">
+        <ion-list>
+                <ion-item>
+                    <ion-input type="text" placeholder="Nome"></ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-input type="email" placeholder="Email"></ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-input type="email" placeholder="Confirmar Email"></ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-label>Perfil</ion-label>
+                    <ion-select cancelText="Cancelar" okText="Confirmar">
+                        <ion-option value="ADM">Administrador</ion-option>
+                        <ion-option value="VENDEDOR">Vendedor</ion-option>
+                        <ion-option value="CAIXA">Caixa</ion-option>
+                    </ion-select>
+                </ion-item> 
+            </ion-list>
+            <button *ngIf="baseClass.acao != baseClass.DETALHAR" ion-button block type="submit">Salvar</button>
+        </form>
+    </ion-card>
 </ion-content>

@@ -1,15 +1,20 @@
 import { Injectable } from '@angular/core';
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular'; 
+import { NavController, Events } from 'ionic-angular'; 
+import { Page } from 'ionic-angular/navigation/nav-util';
+
 @Injectable()
 export class Navigation{
     navigation: NavController;
-    constructor(private navController: NavController){
+    constructor(private navController: NavController, private events: Events){
 
     }
 
-    public push(componente: Component, params: object){
-
+    public voltarMetodo(componente: Page, msg: string){
+        this.navController.pop();
+        this.navController.push(componente, {
+            msg: msg
+        });
     }
 
     // pass in a callback when transitioning

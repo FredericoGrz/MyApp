@@ -29,7 +29,8 @@ export class AlertService{
                     role: 'nao',
                     handler: () => funcaoNao()
                 }
-            ]
+            ],
+            enableBackdropDismiss: false
         });
         this.alert.present();
     }
