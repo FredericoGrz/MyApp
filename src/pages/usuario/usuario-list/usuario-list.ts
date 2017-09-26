@@ -1,10 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { UsuarioPage } from '../usuario/usuario';
 import { LoaderService } from '../../../services/loader';
 import { AlertService } from '../../../services/alert';
 import { ToasterService } from '../../../services/toaster/toaster';
 import { BaseClass } from '../../../baseClass/baseClass';
+import { Usuario, UsuarioService } from '../usuario.service';
 
 @Component({
     selector: 'page-usuario-list',
@@ -16,8 +17,9 @@ export class UsuarioListPage {
     icons: string[];
     items: Array<{ title: string, note: string, icon: string }>;
     loader: any;
+    usuarios: Promise<Usuario[]>;
 
-    constructor(public navCtrl: NavController, private toasterService: ToasterService, private navParams: NavParams, public loadingService: LoaderService, public baseClass: BaseClass, private alertService: AlertService) {
+    constructor(private userService : UsuarioService, public navCtrl: NavController, private toasterService: ToasterService, private navParams: NavParams, public loadingService: LoaderService, public baseClass: BaseClass, private alertService: AlertService) {
         this.toasterService.toasterSuccess(this.navParams.get('msgSuccess'));
         this.toasterService.toasterFail(this.navParams.get('msgFail'));
         // Let's populate this page with some filler content for funzies
@@ -33,7 +35,9 @@ export class UsuarioListPage {
                 icon: this.icons[Math.floor(Math.random() * this.icons.length)]
             });
         }
+        // this.usuarios = userService.buscarUsuariosAtivos();
     }
+    
 
     //Abre a tela de usuario passando o proprio usuario e a ação Detalhar.
     consultarUsuario(usuario) {
